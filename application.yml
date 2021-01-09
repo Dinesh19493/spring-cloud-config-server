@@ -1,0 +1,21 @@
+# Registering with Eureka Discovery Service
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+
+# Custom URL end-points
+microservice:
+  order-service:
+    endpoints:
+      endpoint:
+        uri: http://ORDER-SERVICE/orders/bookOrder
+  payment-service:
+    endpoints:
+      endpoint:
+        uri: http://PAYMENT-SERVICE/payments/processPayment
